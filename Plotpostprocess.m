@@ -4,6 +4,9 @@ clc
 q=1;
 k=1;%initialize count
 figure1=figure(1);
+
+% the for loops below mirror the scan code, so that x and y coordinates can be
+% attributed to the raw data given the original scan parameters
 for x=startX:scanResolution:endX
     for y=startY:scanResolution:endY
         kstart=k;
