@@ -1,4 +1,4 @@
-try
+try % In case the oscilloscope is being used, stop it
     % Stop the device
     [status.stop] = invoke(ps5000aDeviceObj, 'ps5000aStop');
     % Disconnect device

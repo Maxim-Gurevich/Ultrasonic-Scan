@@ -1,4 +1,4 @@
-try
+try % In case the oscilloscope is being used, stop it
     % Stop the device
     [status.stop] = invoke(ps5000aDeviceObj, 'ps5000aStop');
     % Disconnect device
@@ -12,7 +12,7 @@ clear all
 close all
 
 %% user-defined parameters
-filename          ='rapidtest';  %descriptive name, 4 random digits will be automatically appended to this
+filename          ='rapidtest';  %descriptive name, 4 random digits will be automatically appended to this when is gets saved
 pointsBefore      = 64;  %points recorded before trigger
 pointsAfter       = 4096;  %points recorded after trigger
 triggerVoltage    = -3700;  %trigger voltage (mV)
