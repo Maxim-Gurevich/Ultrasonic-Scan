@@ -14,12 +14,12 @@ close all
 %% user-defined parameters
 filename          ='rapidtest';  %descriptive name, 4 random digits will be automatically appended to this when is gets saved
 pointsBefore      = 64;  %points recorded before trigger
-pointsAfter       = 4096;  %points recorded after trigger
+pointsAfter       = 4096;  %points recorded after trigger (desired time horizon)
 triggerVoltage    = -3700;  %trigger voltage (mV)
-startY            = -30;  %botton of scan (mm)
-endY              = 30;  %top of scan (mm)
-startX            = 0;  %left of scan (mm)
-endX              = 6;  %right of scan (mm)
+startY            = -30;  %position of botton of scan area (mm)
+endY              = 30;  %position of top of scan area (mm)
+startX            = 0;  %position of left of scan area (mm)
+endX              = 6;  %position of right of scan area (mm)
 scanResolutionX   = 6/300;  %scan resoluiton (mm)
 scanResolutionY   = 1000;  %scan resoluiton (mm), set this to a very large number for rapid aquisition (only allows for-loop to run once)
 startData         = 800;  %beginning of waveform data to be saved (also affects preview)
