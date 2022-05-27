@@ -28,28 +28,27 @@ rmsWindow         = 30;  %tune to acheive one envelope arc per pulse
 
 %% connect to scanner and configure
 
-s = serialport("COM3",115200);%COM 5 and 250000 for lulzbot
-pause(5)
+s = serialport("COM3",115200);%COM 5 and 250000 for connecting to lulzbot
+pause(5)% allow time for the PC to connect to the stages
 %% home scanner and move to start position
 reply="";%initialize
 while (s.NumBytesAvailable>0)
     reply=readline(s);%returns the recieved text
 end
-%writeline(s,"$H");
-%writeline(s,"G0 X150 Y60 Z-30 F10000");
+%writeline(s,"$H"); %uncomment this line to home the printer. This is usually uneccesary
 userinput = input('is the scanner at the correct start position?(yes/no)','s')
 if ~strcmp(userinput,'yes')
     error('answer was not yes (case sensitive)')
 end
 
-writeline(s,"$120=200");
-pause(1)
-writeline(s,"$121=200");
-writeline(s,"G92 X0 Y0 Z0");
-%writeline(s,"G0 X10 Y10 F10000");
-
-%writeline(s,"G0 X0 Y0");
+writeline(s,"$120=200");% set acceleration to a high value
+pause(1) %give a moment for the previous line to take effect
+writeline(s,"$121=200");% set acceleration to a high value
+writeline(s,"G92 X0 Y0 Z0"); % resets origin coordinates to current position
 %% PicoScope 5000 Series (A API) Instrument Driver Oscilloscope Rapid Block Data Capture Example
+%%%%%%%%%%%%%%%%%%%%%%%%
+% The following code is based on the example code from PicoScopeSDK
+%%%%%%%%%%%%%%%%%%%%%%%%
 % This is an example of an instrument control session using a device
 % object. The instrument control session comprises all the steps you are
 % likely to take when communicating with your instrument.

@@ -25,10 +25,10 @@ scanResolutionY   = 1000;  %scan resoluiton (mm), set this to a very large numbe
 startData         = 800;  %beginning of waveform data to be saved (also affects preview)
 endData           = 10000;  %end of waveform data to be saved (also affects preview); set this to a large number to view the entire data set
 minPeakProminence = 50;  %only affects preview visualization, can be changed in post-process
-rmsWindow         = 50;  %tune to acheive one envelope arc per pulse
+rmsWindow         = 50;  %tune to acheive one envelope arc per pulse.
 numberOfSegments  = 1000;  %pre-alocate memory segments
-numberOfCaptures  = 900;  %number of waveforms caputred (limited by pre-alocation)
-previewSkips      = 50;  %use this to speed up the preview; will only process waveforms whose index is a multiple of this number; if this value is larger than 10, you may be collecting too many points
+numberOfCaptures  = 100;  %number of waveforms caputred (limited by pre-alocation). You can pay attention to the light on the ocilloscope to see how long it takes to capture data.
+previewSkips      = 2;  %use this to speed up the preview; will only process waveforms whose index is a multiple of this number; if this value is larger than 10, you may be collecting too many points. consider slowing down the pulse rate
 
 %% connect to scanner and configure
 
